@@ -1,0 +1,4 @@
+<div class="period">
+    <span>Từ ngày <strong><c:out value="${displayStart}"/></strong></span>
+    <span>Đến ngày <strong><c:out value="${displayEnd}"/></strong></span>
+</div>

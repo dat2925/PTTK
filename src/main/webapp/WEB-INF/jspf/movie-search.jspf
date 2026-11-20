@@ -1,0 +1,8 @@
+<form action="<c:url value='/view/customer/MovieSearchResultsView5.jsp'/>" method="get" novalidate>
+    <label for="title">Tên phim</label>
+    <div class="form-row search">
+        <input type="text" id="title" name="title" required maxlength="255"
+               value="<c:out value='${keyword}'/>">
+        <button class="primary" type="submit">Tìm kiếm</button>
+    </div>
+</form>

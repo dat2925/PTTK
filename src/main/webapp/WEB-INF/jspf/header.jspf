@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><c:out value="${pageTitle}"/> | CineMan</title>
+    <link rel="stylesheet" href="<c:url value='/assets/site.css'/>">
+</head>
+<body>
+<div class="panel">
+    <header class="masthead">
+        <a class="brand" href="<c:url value='/'/>">CineMan</a>
+        <c:if test="${not empty sessionScope.member}">
+            <form class="logout" action="<c:url value='/doLogout.jsp'/>" method="post">
+                <input type="hidden" name="token" value="<c:out value='${sessionScope.formToken}'/>">
+                <button type="submit">Đăng xuất</button>
+            </form>
+        </c:if>
+    </header>
+    <main>

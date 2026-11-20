@@ -1,0 +1,11 @@
+<%
+    Member5 member = (Member5) session.getAttribute("member");
+    if (member == null) {
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
+        return;
+    }
+    if (!"MANAGER".equals(member.getRole())) {
+        response.sendError(403);
+        return;
+    }
+%>

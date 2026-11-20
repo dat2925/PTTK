@@ -1,0 +1,129 @@
+:root {
+    --ink: #153a4e;
+    --teal: #1c5268;
+    --line: #9ebcc9;
+    --heading: #d8e9ef;
+    --light: #eaf3f5;
+    --stripe: #f0f6f7;
+    --input: #fff2cd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 12px;
+    color: var(--ink);
+    background: #fff;
+    font: 17px/1.45 Arial, sans-serif;
+}
+
+.panel {
+    max-width: 970px;
+    margin: 0 auto;
+    border: 1px solid var(--line);
+}
+
+.masthead {
+    min-height: 36px;
+    padding: 3px 4.4%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand { color: inherit; font-size: 21px; font-weight: bold; text-decoration: none; }
+.logout { margin: 0; }
+.logout button { padding: 4px 0 4px 8px; background: transparent; color: #fff; border: 0; font-size: 14px; }
+.logout button:hover { text-decoration: underline; }
+
+main { padding: 5px 4.4% 14px; }
+h1, h2, h3 { margin: 0 0 5px; }
+h1 { font-size: 25px; line-height: 1.3; }
+h2 { font-size: 20px; }
+h3 { font-size: 17px; }
+label { display: block; margin-bottom: 3px; font-weight: bold; }
+
+input, button, .button { font: inherit; }
+
+input:not([type=hidden]) {
+    width: 100%;
+    min-height: 36px;
+    padding: 4px 6px;
+    color: #152f3d;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--input);
+}
+
+button, .button {
+    display: inline-block;
+    min-height: 34px;
+    padding: 4px 14px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+:focus-visible { outline: 3px solid #a36408; outline-offset: 2px; }
+.primary { color: #fff; background: var(--teal); border-color: var(--teal); font-weight: bold; }
+.primary:hover { background: #143f50; }
+.secondary { color: var(--ink); background: var(--light); font-weight: bold; }
+.secondary:hover { background: var(--heading); }
+.home-action { min-width: min(280px, 100%); margin: 8px 0 5px; }
+.back { min-width: min(200px, 100%); margin-top: 9px; }
+
+.form-row { display: grid; align-items: end; gap: 14px 36px; margin: 4px 0 10px; }
+.search { grid-template-columns: minmax(0, 1fr) minmax(140px, 27%); }
+.date-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(140px, 26%); margin-top: 13px; }
+.form-row button { min-height: 36px; }
+.login-form { max-width: 330px; padding-top: 7px; }
+.login-form input { margin-bottom: 10px; }
+
+.table-wrap { margin-top: 8px; overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #152f3d;
+}
+th, td { padding: 4px 7px; border: 1px solid var(--line); }
+thead th, tfoot { background: var(--heading); }
+tbody tr:nth-child(even) { background: var(--stripe); }
+tfoot th { text-align: left; }
+tfoot { font-weight: bold; }
+.center, .action-cell { text-align: center; }
+.number { text-align: right; font-variant-numeric: tabular-nums; }
+.action-cell { padding: 0; background: var(--light); }
+.action-cell a { display: block; padding: 4px 7px; font-weight: bold; color: var(--ink); }
+.action-cell a:not(:hover) { text-decoration: none; }
+
+.report-types { margin: 5px 0 6px; padding: 0; list-style: none; }
+.report-types li { border: 1px solid var(--line); background: var(--stripe); color: #405b67; }
+.report-types li + li { border-top: 0; }
+.report-types li, .report-types a { padding: 4px 7px; }
+.report-types li:has(a) { padding: 0; }
+.report-types a { display: block; color: var(--ink); background: var(--heading); font-weight: bold; }
+.report-types a:not(:hover) { text-decoration: none; }
+
+.period { display: flex; flex-wrap: wrap; gap: 2px 36px; margin: 3px 0 6px; }
+.period strong { margin-left: 14px; }
+.movie-facts { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
+.movie-facts div { flex: 1 1 110px; border: 1px solid var(--line); }
+.movie-facts dt { padding: 4px 7px; background: var(--heading); font-weight: bold; }
+.movie-facts dd { margin: 0; padding: 4px 7px; }
+
+.description, .message { margin: 7px 0; padding: 7px 9px; background: var(--stripe); border: 1px solid var(--line); }
+.error { background: #fff0eb; color: #752b1c; border-color: #cf9a89; }
+
+@media (max-width: 610px) {
+    body { margin: 8px; font-size: 16px; }
+    main { padding: 8px 11px 13px; }
+    h1 { font-size: 22px; }
+    .form-row { grid-template-columns: 1fr; gap: 8px; }
+    .form-row button { justify-self: start; }
+    th { white-space: nowrap; }
+}
